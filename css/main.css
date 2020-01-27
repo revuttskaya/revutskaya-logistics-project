@@ -161,7 +161,7 @@ main {
     }
 
     #about-us > h1, #services > h1, #contacts > h1 {
-        text-align: left;
+        text-align: center;
     }
 
     #banner > .inner {
