@@ -27,6 +27,8 @@ main {
 }
 
 #news-boxes > div > a {
+    display: flex;
+    flex-flow: column nowrap;
     margin: 1rem 0;
     text-decoration: none;
     background-color: #e4e9f4;
@@ -41,30 +43,28 @@ main {
     color: #d83f2d;
 }
 
-.box-news {
-    display: flex;
-    flex-flow: column nowrap;
-}
-
-.box-news:nth-child(2n) {
+#news-boxes > div > a:nth-child(2n) {
     background-color: rgb(255, 255, 255);
 }
 
 .box-news > img {
     width: 100%;
 }
-
 .box-news > time {
-    margin: 1rem 0.5rem 0.5rem 0.5rem;
+    margin: 1rem;
 }
 
 .box-news > h1 {
-    margin: 0.5rem 0.5rem;
+    margin: 1rem 1rem 0.5rem 1rem;
     font-size: 1.5rem;
 }
 
 .box-news > p {
-    margin: 0.5rem 0.5rem 1rem 0.5rem;
+    margin: 1rem;
+}
+
+.clear-fix {
+    display: none;
 }
 
 @media (min-width: 50rem) {
@@ -100,9 +100,8 @@ main {
     }
 }
 
-/*@media (min-width: 90rem) {
+@media (min-width: 90rem) {
     #news-boxes > div {
-        display: block;
         width: 60%;
     }
 
@@ -110,22 +109,48 @@ main {
         text-align: center;
         width: 60%;
     }
+}
 
-    .news-box1 {
-        float: left;
-        height: 842px;
-        width: 50%;
+@media (min-width: 105rem) {
+    #news-boxes > div {
+        display: block;
     }
 
-    .news-box2 {
+    #news-boxes > div > a {
+        display: block;
         float: left;
-        height: 632px;
+    }
+
+    .clear-fix {
+        display: block;
+        clear: both;
+    }
+
+    #news-boxes > div > .news-box1 {
+        margin: 0.5rem;
+        width: 45%;
+        height: 795px;
+    }
+
+    #news-boxes > div > .news-box2, #news-boxes > div > .news-box3 {
+        margin: 0.5rem;
         width: 25%;
+        height: 550px;
     }
 
-    .news-box3 {
-        float: left;
-        height: 632px;
-        width: 25%;
+    #news-boxes > div > .news-box4 {
+        margin: 0.5rem;
+        width: 51%;
+        height: 230px;
     }
-}*/
+
+    .news-box4 > .box-news > img {
+        display: none;
+    }
+
+    #news-boxes > div > .news-box5, #news-boxes > div > .news-box6 {
+        margin: 0.5rem;
+        width: 48%;
+    }
+}
+
