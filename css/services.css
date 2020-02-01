@@ -1,0 +1,113 @@
+main {
+    margin: 0 0 8rem 0;
+    background-color: rgb(245, 245, 245);
+}
+
+#services-box {
+    margin-top: 5rem;
+}
+
+#services-box > h1 {
+    text-align: right;
+    width: 95%;
+    margin: 0 auto;
+    padding-top: 3rem;
+    padding-bottom: 1rem;
+    text-transform: uppercase;
+    font-size: 2rem;
+    color: #d83f2d;
+}
+
+#services-box > div {
+    display: flex;
+    flex-flow: column nowrap;
+    margin: 0 auto;
+    width: 95%;
+}
+
+.service {
+    margin: 1rem 0;
+    font-size: 1.3rem;
+    background-color: rgb(255, 255, 255);
+}
+
+.service > img {
+    width: 100%;
+}
+
+.service-title {
+    margin: 1rem;
+    text-transform: uppercase;
+}
+
+.service > p {
+    margin: 1rem;
+}
+
+.service-cta-btn {
+    display: block;
+    margin: 1rem;
+    padding: 0.5rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 1.1rem;
+    color: #d83f2d;
+    border-top: 1px solid darkgrey;
+    border-bottom: 1px solid darkgrey;
+}
+
+.service-cta-btn::before {
+    content: '\203a  ';
+}
+
+.service-cta-btn:hover {
+    border-top: 1px solid #d83f2d;
+    border-bottom: 1px solid #d83f2d;
+}
+
+@media (min-width: 45rem) {
+    #services-box > div {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-between;
+        margin: 0 auto;
+        width: 95%;
+    }
+
+    .service {
+        width: 49%;
+    }
+}
+
+@media (min-width: 70rem) {
+    #services-box > h1 {
+        width: 80%;
+    }
+
+    #services-box > div{
+        display: block;
+        width: 80%;
+    }
+
+    .service {
+        width: 100%;
+    }
+
+    .service > img {
+        float: left;
+        width: 50%;
+    }
+
+    .service::after {
+        content: '';
+        display: block;
+        clear: left;
+    }
+}
+
+/*1 нужно добавить див для обертки заголовка, текста и ссылки в .service
+  2 в каждом втором float right для картинки
+  3 поменять после 70rem стиль ссылки + добавить картинку перед блоком Услуги
+  4 обратить внимание на цвет фона
+  5 выравнивание заголовка Услуги
+ */
