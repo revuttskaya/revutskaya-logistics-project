@@ -1,0 +1,71 @@
+main {
+    margin-top: 7rem;
+}
+
+.contact-us {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.contact-us__field {
+    max-width: 500px;
+}
+
+.contact-us__field legend {
+    margin-bottom: 1rem;
+}
+
+.contact-us__field input {
+    width: 100%;
+    margin: 1rem 0;
+    border: none;
+    border-bottom: 1px solid black;
+    outline: none;
+}
+
+.contact-us__field input:blank {
+    border-bottom: 1px solid #d83f2d;
+}
+
+#message {
+    width: 100%;
+    margin: 1rem 0;
+    padding: 10px;
+    background-color: rgba(43, 43, 79, 0.15);
+    border: none;
+    border-radius: 3px;
+    outline: none;
+    resize: none;
+}
+
+.contact-us__field input[type=checkbox] {
+    width: 5%;
+    margin-bottom: 0;
+}
+
+.contact-us__field__btn {
+    display: block;
+    width: 200px;
+    margin: 1rem 0;
+    padding: 0.5rem 0;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 2px;
+    color: #d83f2d;
+    background-color: white;
+    border: 1px solid #d83f2d;
+    border-radius: 3px;
+    text-decoration: none;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+    transition: 0.3s;
+}
+
+.contact-us__field__btn:hover {
+    background: #d83f2d;
+    box-shadow: 0 15px 20px rgba(191, 15, 15, 0.2);;
+    color: white;
+    transform: translateY(-3px);
+}
+
+/* хочу, чтоб нижняя граница input становилась красной при выборе данного input с помоцью JS
