@@ -61,7 +61,7 @@
   <main>
     <section id="banner">
       <div class="inner">
-        <h2>Just-in-time logistics</h2>
+        <h2>just-in-time logistics</h2>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit, voluptatum? lorem15</p>
         <a href="#" class="cta-btn">Отправить запрос</a>
       </div>
@@ -70,9 +70,11 @@
     <section id="about-us">
       <h1>О компании</h1>
       <div>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab accusamus aliquam aliquid consequuntur deserunt
-          dicta esse et facilis fugit, illum impedit obcaecati odit! Autem consectetur corporis cupiditate dolore ea
-          eveniet ex hic iure repellat voluptatibus?</p>
+        <p>Логистическая компания «Just-in-time Logistics» оказывает транспортно-экспедиционные услуги в любой точке
+          мира с 1995 года.
+          За годы работы мы выработали эффективные способы взаимодействия с клиентами и схемы транспортировки грузов
+          различных категорий и объемов. Мы сотрудничаем с ведущими международными перевозчиками и страховыми
+          компаниями, что позволяет обеспечивать оптимальные сроки доставки и высокий уровень безопасности.</p>
       </div>
     </section>
 
@@ -82,34 +84,28 @@
       <h1>Услуги</h1>
       <div>
         <a href="#" class="services__link">
-          <h3>Автомобильные</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad aperiam architecto deleniti ex labore
-            nulla.</p>
+          <h3>Автомобильные перевозки</h3>
+          <p>Доставка сборных и комплектных грузов, любого тоннажа и объема. Негабаритные перевозки.</p>
         </a>
         <a href="#" class="services__link">
-          <h3>Авиа</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt nihil possimus reiciendis repellat?
-            Neque, tempore?</p>
+          <h3>Авиаперевозки</h3>
+          <p>Перевозка грузов в сжатые сроки, доставка "от двери до двери".</p>
         </a>
         <a href="#" class="services__link">
-          <h3>Морские</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos ipsam possimus quae veritatis!
-            Enim, perferendis!</p>
+          <h3>Морские перевозки</h3>
+          <p>Транспортировка товаров из Китая, Америки, Индии в порты Европы и России.</p>
         </a>
         <a href="#" class="services__link">
-          <h3>Железнодорожные</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos illum impedit qui quibusdam
-            sapiente sequi.</p>
+          <h3>Железнодорожные перевозки</h3>
+          <p>Экономичная доставка грузов, полное документальное сопровождение.</p>
         </a>
         <a href="#" class="services__link">
-          <h3>Склады</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. At earum, eos fugiat placeat quibusdam
-            vero.</p>
+          <h3>Складская логистика</h3>
+          <p>Погрузочно-разгрузочные работы, системы автоматизации учета, температурные склады.</p>
         </a>
         <a href="#" class="services__link">
-          <h3>Таможня</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum doloribus magnam perferendis quisquam?
-            Culpa, natus!</p>
+          <h3>Таможенное оформление</h3>
+          <p>Консультация по вопросам таможенного оформления в Беларуси, России, ЕС.</p>
         </a>
       </div>
     </section>
@@ -123,15 +119,43 @@
           <p>г. Минск, ул. Ленина, здание 1</p>
           <p>+375(29)1515213 (A1, MTC)</p>
           <p>info@jit-log.com</p>
+          <div class="contacts__info__socials">
+            <a href="https://www.linkedin.com/" target="_blank">
+              <img src="../images/linkedin.png">
+            </a>
+            <a href="https://www.instagram.com/?hl=ru" target="_blank">
+              <img src="../images/instagram.png">
+            </a>
+            <a href="https://www.skype.com/ru/" target="_blank">
+              <img src="../images/skype.png">
+            </a>
+          </div>
+
         </div>
-        <fieldset class="contacts__field">
-          <legend>Напишите нам</legend>
-          <input type="text" placeholder="Имя"><br>
-          <input type="email" placeholder="E-mail"><br>
-          <input type="tel" placeholder="Номер телефона"><br>
-          <input type="checkbox">Я согласен на обработку моих личных данных<br>
-          <input type="submit"><br>
-        </fieldset>
+        <form class="contact-us__field">
+
+          <label for="firstName">Имя:</label><br>
+          <input type="text" id="firstName"><br>
+
+          <label for="secondName">Фамилия:</label><br>
+          <input type="text" id="secondName"><br>
+
+          <label for="telNumber">Номер телефона:</label><br>
+          <input type="text" id="telNumber"><br>
+
+          <label for="email">E-mail:</label><br>
+          <input type="text" id="email"><br>
+
+          <label for="message">Сообщение:</label><br>
+          <textarea id="message" rows="6"></textarea>
+
+          <input type="checkbox" id="safePolicy">
+          <label for="safePolicy">Нажимая на кнопку «Отправить» я соглашаюсь на обработку персональных
+            данных</label><br>
+          <a href="#" class="contact-us__field__btn">Отправить</a>
+
+
+        </form>
       </div>
     </section>
 

@@ -27,40 +27,66 @@ main {
     box-shadow: 10px 10px 21px -9px rgba(0, 0, 0, 0.76);
 }
 
+#banner .inner h2:first-letter {
+    color: #d83f2d;
+}
+
 .cta-btn {
+    display: block;
+    width: 300px;
+    margin: 0.5rem auto;
+    padding: 0.5rem 0;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #d83f2d;
+    background-color: white;
+    border: 1px solid #d83f2d;
+    border-radius: 3px;
     text-decoration: none;
-    background-color: #d83f2d;
-    color: #e4e9f4;
-    padding: 0.8rem;
-    margin: 1rem;
-    border-radius: 5px;
-    box-shadow: 10px 10px 21px -9px rgba(0, 0, 0, 0.6);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+    transition: 0.3s;
+}
+
+.cta-btn:hover {
+    background: #d83f2d;
+    box-shadow: 0 15px 20px rgba(191, 15, 15, 0.2);;
+    color: white;
+    transform: translateY(-3px);
 }
 
 #about-us {
     background-color: white;
-    box-shadow: 0px -14px 7px -13px rgba(0, 0, 0, 0.74);
+    box-shadow: 0px 0px 42px -3px rgba(0, 0, 0, 0.75);
 }
 
 #about-us > div, #services > div, #contacts > div {
     margin: 0 auto;
     padding: 1rem 0 3rem 0;
-    width: 80%;
+    width: 90%;
     font-size: 1.5rem;
 }
 
+#about-us > div > p {
+    line-height: 2.5rem;
+    text-align: center;
+}
+
 #about-us > h1, #services > h1, #contacts > h1 {
-    text-align: right;
+    text-align: center;
     width: 80%;
     margin: 0 auto;
     padding-top: 3rem;
     padding-bottom: 1rem;
     text-transform: uppercase;
-    font-size: 2rem;
+    text-shadow: 1px 1px 2px black;
+    font-size: 2.3rem;
     color: #d83f2d;
 }
 
 .background-services {
+    position: relative;
+    z-index: -1;
     background-image: url("../images/background-services.jpg");
     background-position: center center;
     background-repeat: no-repeat;
@@ -69,8 +95,9 @@ main {
 }
 
 #services {
-    background-color: rgba(43, 43, 79, 0.9);
+    background-color: rgba(43, 43, 79, 0.8);
     color: #e4e9f4;
+    box-shadow: 0px 0px 42px -3px rgba(0, 0, 0, 0.75);
 }
 
 #services > div {
@@ -82,7 +109,8 @@ main {
 .services__link {
     display: block;
     padding: 1rem;
-    margin: 0.5rem 0;
+    margin: 0.5rem;
+    border-left: 3px solid #d83f2d;
     border-radius: 3px;
     text-decoration: none;
     color: #e4e9f4;
@@ -101,7 +129,13 @@ main {
     color: rgb(43, 43, 79);
 }
 
+.services__link:hover h3 {
+    color: #d83f2d;
+}
+
 .background-contact {
+    position: relative;
+    z-index: -1;
     background-image: url("../images/background-contact.jpg");
     background-position: center center;
     background-repeat: no-repeat;
@@ -110,30 +144,85 @@ main {
 }
 
 #contacts {
-    padding-bottom: 7rem;
-    background-color: #e4e9f4;
+    box-shadow: 0px -37px 42px -34px rgba(0, 0, 0, 0.50);
 }
 
-.contacts__field {
-    margin-top: 2rem;
-    border-radius: 5px;
-    font-size: 1.5rem;
+.contacts__info__socials > a {
+    text-decoration: none;
 }
 
-.contacts__field input {
+.contacts__info__socials > a > img {
+    margin-right: 1rem;
+    height: 50px;
+    border-radius: 10px;
+}
+
+.contact-us__field {
+    width: 100%;
+    margin: 1.5rem auto 8rem;
+    padding: 0.8rem;
+    border: 3px solid #d83f2d;
+    border-radius: 3px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+}
+
+.contact-us__field input {
+    width: 100%;
     margin: 0.5rem 0;
-    font-size: 1.5rem;
+    border: none;
+    border-bottom: 1px solid black;
+    outline: none;
 }
 
-@media (min-width: 70rem) {
-    #services > div {
-        display: flex;
-        flex-flow: row wrap;
-        justify-content: center;
+#message {
+    width: 100%;
+    margin: 0.5rem 0;
+    padding: 10px;
+    background-color: rgba(43, 43, 79, 0.15);
+    border: none;
+    border-radius: 3px;
+    outline: none;
+    resize: none;
+}
+
+.contact-us__field input[type=checkbox] {
+    width: 5%;
+    margin-bottom: 0;
+}
+
+.contact-us__field__btn {
+    display: block;
+    width: 200px;
+    margin: 0.5rem auto;
+    padding: 0.5rem 0;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 2px;
+    color: #d83f2d;
+    background-color: white;
+    border: 1px solid #d83f2d;
+    border-radius: 3px;
+    text-decoration: none;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+    transition: 0.3s;
+}
+
+.contact-us__field__btn:hover {
+    background: #d83f2d;
+    box-shadow: 0 15px 20px rgba(191, 15, 15, 0.2);;
+    color: white;
+    transform: translateY(-3px);
+}
+
+@media (min-width: 50rem) {
+    #contacts {
+        position: relative;
     }
 
-    .services__link {
-        width: 50%;
+    #contacts > h1 {
+        width: 90%;
+        text-align: left;
     }
 
     #contacts > div {
@@ -141,9 +230,29 @@ main {
         flex-flow: row nowrap;
     }
 
-    .contacts__field {
-        margin: 0;
-        width: 60%;
+    .contact-us__field {
+        position: absolute;
+        top: -100px;
+        right: 30px;
+        width: 50%;
+        background-color: white;
+    }
+}
+
+@media (min-width: 70rem) {
+    #about-us > h1::before, #services > h1::before, #about-us > h1::after, #services > h1::after {
+        content: url("../images/line.png");
+        opacity: 0.6;
+    }
+
+    #services > div {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: center;
+    }
+
+    .services__link {
+        width: 45%;
     }
 
     .contacts__info {
@@ -153,6 +262,20 @@ main {
     .background-contact {
         height: 45vh;
     }
+
+    #contacts > h1 {
+        width: 80%;
+    }
+
+    #contacts > div {
+        width: 80%;
+    }
+
+    .contact-us__field {
+        top: -180px;
+        right: 100px;
+        width: 40%;
+    }
 }
 
 @media (min-width: 90rem) {
@@ -160,7 +283,7 @@ main {
         width: 60%;
     }
 
-    #about-us > h1, #services > h1, #contacts > h1 {
+    #about-us > h1, #services > h1 {
         text-align: center;
     }
 
@@ -172,17 +295,25 @@ main {
         height: 50vh;
     }
 
-    #services > div {
-        display: flex;
-        flex-flow: row wrap;
-        justify-content: center;
-    }
-
     .services__link {
-        width: 33%;
+        width: 30%;
     }
 
-    #contacts {
-        padding-bottom: 5rem;
+    #contacts > h1 {
+        width: 60%;
+    }
+
+    .contact-us__field {
+        top: -100px;
+        right: 300px;
+        width: 35%;
+    }
+}
+
+@media (min-width: 110rem) {
+    .contact-us__field {
+        top: -220px;
+        right: 550px;
+        width: 30%;
     }
 }
