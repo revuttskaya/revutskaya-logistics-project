@@ -22,6 +22,11 @@ main {
     border-bottom: 1px #d83f2d solid;
 }
 
+.company-name {
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
 #history > div > p:last-child {
     border-bottom: none;
 }
@@ -39,13 +44,14 @@ main {
 }
 
 #history > h1, #staff > h1, #partners > h1 {
-    text-align: right;
+    text-align: center;
     width: 80%;
     margin: 0 auto;
     padding-top: 3rem;
     padding-bottom: 1rem;
     text-transform: uppercase;
-    font-size: 2rem;
+    text-shadow: 1px 1px 2px black;
+    font-size: 2.3rem;
     color: #d83f2d;
 }
 
@@ -61,48 +67,165 @@ main {
 
 .employee {
     margin: 1rem 0;
-}
-
-.employee:nth-child(2n) {
-    text-align: right;
+    font-size: 1.5rem;
+    text-align: center;
 }
 
 .employee > img {
-    float: left;
-    margin: 0 1rem;
-    width: 45%;
+    width: 100%;
     border-radius: 3px;
     box-shadow: 5px 5px 5px 0 rgba(0, 0, 0, 0.6);
 }
 
-.employee:nth-child(2n) > img {
-    float: right;
-}
-
 .employee .name {
-    margin: 24px 0;
+    margin: 1rem 0;
     text-transform: uppercase;
     font-size: 1.5rem;
     text-decoration: underline #d83f2d;
+}
+
+.employee p {
+    margin: 1rem 0;
 }
 
 #partners {
     margin-bottom: 6rem;
 }
 
-#partners div {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: space-between;
+.slider__item-nestle {
+    background: url("../images/nestle.png") no-repeat center;
+    background-size: contain;
 }
 
-#partners > div > img {
-    width: 40%;
+.slider__item-lg {
+    background: url("../images/lg.png") no-repeat center;
+    background-size: contain;
+}
+
+.slider__item-bmw {
+    background: url("../images/bmw.png") no-repeat center;
+    background-size: contain;
+}
+
+.slider__item-samsung {
+    height: 150px;
+    background: url("../images/samsung.png") no-repeat center;
+    background-size: contain;
+}
+
+.slider {
+    position: relative;
+    overflow: hidden;
+}
+
+.slider__wrapper {
+    display: flex;
+    transition: transform 0.6s ease;
+}
+
+.slider__item {
+    flex: 0 0 33.333333%;
+    max-width: 33.333333%;
+}
+
+.slider__control {
+    position: absolute;
+    top: 50%;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    color: #fff;
+    text-align: center;
+    opacity: 0.5;
+    height: 50px;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, .5);
+}
+
+.slider__control_show {
+    display: flex;
+}
+
+.slider__control:hover,
+.slider__control:focus {
+    color: #fff;
+    text-decoration: none;
+    outline: 0;
+    opacity: .9;
+}
+
+.slider__control_left {
+    left: 0;
+}
+
+.slider__control_right {
+    right: 0;
+}
+
+.slider__control::before {
+    content: '';
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background: transparent no-repeat center center;
+    background-size: 100% 100%;
+}
+
+.slider__control_left::before {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23fff' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E");
+}
+
+.slider__control_right::before {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23fff' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E");
+}
+
+.slider__item > div {
+    line-height: 250px;
+    font-size: 100px;
+    text-align: center;
+}
+
+@media (min-width: 38rem) {
+    #history > div > p {
+        font-size: 1.7rem;
+    }
+
+    .employee > img {
+        float: left;
+        margin: 0 1rem;
+        width: 45%;
+    }
+
+    .employee:nth-child(2n) > img {
+        float: right;
+    }
+
+    .employee:nth-child(2n+1) {
+        text-align: left;
+    }
+
+    .employee:nth-child(2n) {
+        text-align: right;
+    }
 }
 
 @media (min-width: 70rem) {
     .background-company {
         height: 50vh;
+    }
+
+    #history > h1::before, #staff > h1::before, #partners > h1::before, #history > h1::after, #staff > h1::after, #partners > h1::after {
+        content: url("../images/line.png");
+        opacity: 0.6;
+    }
+
+    .employee {
+        font-size: 1.7rem;
+    }
+
+    .employee .name {
+        font-size: 1.9rem;
     }
 }
 
@@ -111,8 +234,12 @@ main {
         height: 60vh;
     }
 
-    #history > div, #staff > div, #partners > div {
+    #history > div, #staff > div {
         width: 60%;
+    }
+
+    #partners > div {
+        width: 50%;
     }
 
     #history > h1, #staff > h1, #partners > h1 {
