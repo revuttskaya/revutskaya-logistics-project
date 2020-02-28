@@ -11,15 +11,17 @@ main {
     height: 40vh;
 }
 
-#history {
+.history {
     background-color: #e4e9f4;
-    box-shadow: 0px -14px 7px -13px rgba(0, 0, 0, 0.74);
+    box-shadow: 0 -14px 7px -13px rgba(0, 0, 0, 0.74);
 }
 
-#history > div > p {
+.history__text > p {
     margin: 0;
     padding: 1rem 0;
     border-bottom: 1px #d83f2d solid;
+    text-align: justify;
+    text-justify: inter-word;
 }
 
 .company-name {
@@ -27,7 +29,7 @@ main {
     font-weight: bold;
 }
 
-#history > div > p:last-child {
+.history__text > p:last-child {
     border-bottom: none;
 }
 
@@ -36,14 +38,18 @@ main {
     color: #d83f2d;
 }
 
-#history > div, #staff > div, #partners > div {
+.history__text,
+.staff__employees,
+.partners > div {
     margin: 0 auto;
     padding: 1rem 0 3rem 0;
     width: 80%;
     font-size: 1.5rem;
 }
 
-#history > h1, #staff > h1, #partners > h1 {
+.history__title,
+.staff__title,
+.partners__title {
     text-align: center;
     width: 80%;
     margin: 0 auto;
@@ -55,40 +61,40 @@ main {
     color: #d83f2d;
 }
 
-#staff {
+.staff {
     background-color: rgb(43, 43, 79);
     color: #e4e9f4;
 }
 
-#staff > div {
+.staff__employees {
     display: flex;
     flex-flow: column nowrap;
 }
 
-.employee {
+.staff__employees__profile {
     margin: 1rem 0;
     font-size: 1.5rem;
     text-align: center;
 }
 
-.employee > img {
+.staff__employees__profile > img {
     width: 100%;
     border-radius: 3px;
     box-shadow: 5px 5px 5px 0 rgba(0, 0, 0, 0.6);
 }
 
-.employee .name {
+.staff__employees__profile__name {
     margin: 1rem 0;
     text-transform: uppercase;
     font-size: 1.5rem;
     text-decoration: underline #d83f2d;
 }
 
-.employee p {
+.staff__employees__profile p {
     margin: 1rem 0;
 }
 
-#partners {
+.partners {
     margin-bottom: 6rem;
 }
 
@@ -187,25 +193,25 @@ main {
 }
 
 @media (min-width: 38rem) {
-    #history > div > p {
+    .history__text > p {
         font-size: 1.7rem;
     }
 
-    .employee > img {
+    .staff__employees__profile > img {
         float: left;
         margin: 0 1rem;
         width: 45%;
     }
 
-    .employee:nth-child(2n) > img {
+    .staff__employees__profile:nth-child(2n) > img {
         float: right;
     }
 
-    .employee:nth-child(2n+1) {
+    .staff__employees__profile:nth-child(2n+1) {
         text-align: left;
     }
 
-    .employee:nth-child(2n) {
+    .staff__employees__profile:nth-child(2n) {
         text-align: right;
     }
 }
@@ -215,16 +221,21 @@ main {
         height: 50vh;
     }
 
-    #history > h1::before, #staff > h1::before, #partners > h1::before, #history > h1::after, #staff > h1::after, #partners > h1::after {
+    .history__title::before,
+    .staff__title::before,
+    .partners__title::before,
+    .history__title::after,
+    .staff__title::after,
+    .partners__title::after {
         content: url("../images/line.png");
         opacity: 0.6;
     }
 
-    .employee {
+    .staff__employees__profile {
         font-size: 1.7rem;
     }
 
-    .employee .name {
+    .staff__employees__profile .staff__employees__profile__name {
         font-size: 1.9rem;
     }
 }
@@ -234,15 +245,18 @@ main {
         height: 60vh;
     }
 
-    #history > div, #staff > div {
+    .history__text,
+    .staff__employees {
         width: 60%;
     }
 
-    #partners > div {
+    .partners > div {
         width: 50%;
     }
 
-    #history > h1, #staff > h1, #partners > h1 {
+    .history__title,
+    .staff__title,
+    .partners__title {
         text-align: center;
         width: 60%;
     }
