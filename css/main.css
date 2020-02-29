@@ -31,6 +31,10 @@ main {
     color: #d83f2d;
 }
 
+.banner__inner > p {
+    text-align: center;
+}
+
 .banner__inner__cta-btn {
     display: block;
     width: 300px;
@@ -384,7 +388,8 @@ main {
     }
 
     .banner__inner {
-        width: 40%;
+        padding: 3rem;
+        width: 30%;
     }
 
     .background-contact, .background-services {

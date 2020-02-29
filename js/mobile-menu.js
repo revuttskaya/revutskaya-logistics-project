@@ -1,6 +1,6 @@
 var toggleButton = document.querySelector(".toggle-button");
 var mobileNav = document.querySelector(".mobile-nav");
-var close = document.getElementsByClassName(".mobile-nav__close");
+var close = document.getElementsByClassName("mobile-nav__close")[0];
 
 var onCloseModalActions = function () {
     mobileNav.style.display = "none";
