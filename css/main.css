@@ -2,7 +2,7 @@ main {
     margin: 0;
 }
 
-#banner {
+.banner {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -14,7 +14,7 @@ main {
     height: 100vh;
 }
 
-#banner .inner {
+.banner__inner {
     display: flex;
     flex-flow: column;
     align-items: center;
@@ -27,11 +27,11 @@ main {
     box-shadow: 10px 10px 21px -9px rgba(0, 0, 0, 0.76);
 }
 
-#banner .inner h2:first-letter {
+.banner__inner h2:first-letter {
     color: #d83f2d;
 }
 
-.cta-btn {
+.banner__inner__cta-btn {
     display: block;
     width: 300px;
     margin: 0.5rem auto;
@@ -48,31 +48,106 @@ main {
     transition: 0.3s;
 }
 
-.cta-btn:hover {
+.banner__inner__cta-btn:hover {
     background: #d83f2d;
     box-shadow: 0 15px 20px rgba(191, 15, 15, 0.2);;
     color: white;
     transform: translateY(-3px);
 }
 
-#about-us {
-    background-color: white;
-    box-shadow: 0px 0px 42px -3px rgba(0, 0, 0, 0.75);
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    min-width: 400px;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.5);
 }
 
-#about-us > div, #services > div, #contacts > div {
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 2.5rem;
+    border: 1px solid #888;
+    border-radius: 10px;
+    width: 80%;
+}
+
+.modal-content p {
+    margin: 0;
+    font-size: 1.8rem;
+}
+
+.modal-content__input-form {
+    margin-top: 1rem;
+}
+
+.modal-content__input-form > label > input {
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid #d83f2d;
+}
+
+.modal-content__input-form__btn {
+    display: block;
+    margin-top: 1rem;
+    padding: 0.5rem 0.8rem;
+    color: #201A19;
+    text-align: center;
+    text-decoration: none;
+    border: 1px solid #d83f2d;
+    border-radius: 10px;
+}
+
+.modal-content__input-form__btn:hover {
+    background-color: #d83f2d;
+    color: white;
+}
+
+.close {
+    float: right;
+    padding: 0 0.7rem;
+    font-size: 2rem;
+    font-weight: bold;
+    color: #aaa;
+    border: 1px solid #aaa;
+    border-radius: 20px;
+}
+
+.close:hover,
+.close:focus {
+    color: #d83f2d;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.about-us {
+    background-color: white;
+    box-shadow: 0 0 42px -3px rgba(0, 0, 0, 0.75);
+}
+
+.about-us__text,
+.services__wrapper,
+.contacts__wrapper {
     margin: 0 auto;
     padding: 1rem 0 3rem 0;
     width: 90%;
     font-size: 1.5rem;
 }
 
-#about-us > div > p {
+.about-us__text > p {
     line-height: 2.5rem;
     text-align: center;
 }
 
-#about-us > h1, #services > h1, #contacts > h1 {
+.about-us__title,
+.services__title,
+.contacts__title {
     text-align: center;
     width: 80%;
     margin: 0 auto;
@@ -94,13 +169,13 @@ main {
     height: 30vh;
 }
 
-#services {
+.services {
     background-color: rgba(43, 43, 79, 0.8);
     color: #e4e9f4;
-    box-shadow: 0px 0px 42px -3px rgba(0, 0, 0, 0.75);
+    box-shadow: 0 0 42px -3px rgba(0, 0, 0, 0.75);
 }
 
-#services > div {
+.services__wrapper {
     display: flex;
     flex-flow: column;
     justify-content: center;
@@ -143,8 +218,8 @@ main {
     height: 30vh;
 }
 
-#contacts {
-    box-shadow: 0px -37px 42px -34px rgba(0, 0, 0, 0.50);
+.contacts {
+    box-shadow: 0 -37px 42px -34px rgba(0, 0, 0, 0.50);
 }
 
 .contacts__info__socials > a {
@@ -157,7 +232,7 @@ main {
     border-radius: 10px;
 }
 
-.contact-us__field {
+.contacts__input-form {
     width: 100%;
     margin: 1.5rem auto 8rem;
     padding: 0.8rem;
@@ -166,7 +241,7 @@ main {
     box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
 }
 
-.contact-us__field input {
+.contacts__input-form input {
     width: 100%;
     margin: 0.5rem 0;
     border: none;
@@ -185,12 +260,12 @@ main {
     resize: none;
 }
 
-.contact-us__field input[type=checkbox] {
+.contacts__input-form input[type=checkbox] {
     width: 5%;
     margin-bottom: 0;
 }
 
-.contact-us__field__btn {
+.contacts__input-form__btn {
     display: block;
     width: 200px;
     margin: 0.5rem auto;
@@ -208,7 +283,7 @@ main {
     transition: 0.3s;
 }
 
-.contact-us__field__btn:hover {
+.contacts__input-form__btn:hover {
     background: #d83f2d;
     box-shadow: 0 15px 20px rgba(191, 15, 15, 0.2);;
     color: white;
@@ -216,21 +291,25 @@ main {
 }
 
 @media (min-width: 50rem) {
-    #contacts {
+    .modal-content {
+        width: 60%;
+    }
+
+    .contacts {
         position: relative;
     }
 
-    #contacts > h1 {
+    .contacts__title {
         width: 90%;
         text-align: left;
     }
 
-    #contacts > div {
+    .contacts__wrapper {
         display: flex;
         flex-flow: row nowrap;
     }
 
-    .contact-us__field {
+    .contacts__input-form {
         position: absolute;
         top: -100px;
         right: 30px;
@@ -240,12 +319,19 @@ main {
 }
 
 @media (min-width: 70rem) {
-    #about-us > h1::before, #services > h1::before, #about-us > h1::after, #services > h1::after {
+    .modal-content {
+        width: 50%;
+    }
+
+    .about-us__title::before,
+    .services__title::before,
+    .about-us__title::after,
+    .services__title::after {
         content: url("../images/line.png");
         opacity: 0.6;
     }
 
-    #services > div {
+    .services__wrapper {
         display: flex;
         flex-flow: row wrap;
         justify-content: center;
@@ -263,15 +349,15 @@ main {
         height: 45vh;
     }
 
-    #contacts > h1 {
+    .contacts__title {
         width: 80%;
     }
 
-    #contacts > div {
+    .contacts__wrapper {
         width: 80%;
     }
 
-    .contact-us__field {
+    .contacts__input-form {
         top: -180px;
         right: 100px;
         width: 40%;
@@ -279,15 +365,25 @@ main {
 }
 
 @media (min-width: 90rem) {
-    #about-us > div, #services > div, #contacts > div, #about-us > h1, #services > h1, #contacts > h1 {
+    .modal-content {
+        width: 40%;
+    }
+
+    .about-us__text,
+    .services__wrapper,
+    .contacts__wrapper,
+    .about-us__title,
+    .services__title,
+    .contacts__title {
         width: 60%;
     }
 
-    #about-us > h1, #services > h1 {
+    .about-us__title,
+    .services__title {
         text-align: center;
     }
 
-    #banner > .inner {
+    .banner__inner {
         width: 40%;
     }
 
@@ -299,11 +395,7 @@ main {
         width: 30%;
     }
 
-    #contacts > h1 {
-        width: 60%;
-    }
-
-    .contact-us__field {
+    .contacts__input-form {
         top: -100px;
         right: 300px;
         width: 35%;
@@ -311,51 +403,14 @@ main {
 }
 
 @media (min-width: 110rem) {
-    .contact-us__field {
+    .modal-content {
+        width: 25%;
+        max-width: 700px;
+    }
+
+    .contacts__input-form {
         top: -220px;
         right: 550px;
         width: 30%;
     }
-}
-
-/*увеличить шрифт input, придумать контент в баннер, что-то сделать с Услугами, потому что некрасивые какие-то
-
- */
-
-/* The Modal (background) */
-.modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
-    left: 0;
-    top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0, 0, 0); /* Fallback color */
-    background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
-}
-
-/* Modal Content/Box */
-.modal-content {
-    background-color: #fefefe;
-    margin: 15% auto; /* 15% from the top and centered */
-    padding: 20px;
-    border: 1px solid #888;
-    width: 80%; /* Could be more or less, depending on screen size */
-}
-
-/* The Close Button */
-.close {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
 }
