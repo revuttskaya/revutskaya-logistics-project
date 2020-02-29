@@ -1,72 +1,75 @@
-main {
+body {
     margin: 0 0 8rem 0;
     background-color: rgb(245, 245, 245);
 }
 
-#services-box {
+.services {
     margin-top: 5rem;
 }
 
-#services-box > h1 {
-    text-align: right;
-    width: 95%;
+.services__title {
+    text-align: center;
+    width: 80%;
     margin: 0 auto;
     padding-top: 3rem;
     padding-bottom: 1rem;
     text-transform: uppercase;
-    font-size: 2rem;
+    text-shadow: 1px 1px 2px black;
+    font-size: 2.3rem;
     color: #d83f2d;
 }
 
-#services-box > div {
+.services__container {
     display: flex;
     flex-flow: column nowrap;
     margin: 0 auto;
     width: 95%;
 }
 
-.service {
+.services__item {
+    box-sizing: border-box;
     margin: 1rem 0;
     font-size: 1.3rem;
     background-color: rgb(255, 255, 255);
 }
 
-.service > img {
+.services__item > img {
     width: 100%;
 }
 
-.service-title {
+.services__item__title {
     margin: 1rem;
     text-transform: uppercase;
 }
 
-.service > p {
+.services__item > p {
     margin: 1rem;
 }
 
-.service-cta-btn {
+.services__item__cta-btn {
     display: block;
+    box-sizing: border-box;
     margin: 1rem;
     padding: 0.5rem;
     text-decoration: none;
     text-transform: uppercase;
     font-size: 1.1rem;
     color: #d83f2d;
-    border-top: 1px solid darkgrey;
-    border-bottom: 1px solid darkgrey;
+    border-top: 2px solid transparent;
+    border-bottom: 2px solid transparent;
 }
 
-.service-cta-btn::before {
-    content: '\203a  ';
+.services__item__cta-btn::before {
+    content: '\203a';
 }
 
-.service-cta-btn:hover {
-    border-top: 1px solid #d83f2d;
-    border-bottom: 1px solid #d83f2d;
+.services__item__cta-btn:hover {
+    border-top: 2px solid #d83f2d;
+    border-bottom: 2px solid #d83f2d;
 }
 
 @media (min-width: 45rem) {
-    #services-box > div {
+    .services__container {
         display: flex;
         flex-flow: row wrap;
         justify-content: space-between;
@@ -74,40 +77,34 @@ main {
         width: 95%;
     }
 
-    .service {
+    .services__item {
         width: 49%;
     }
 }
 
 @media (min-width: 70rem) {
-    #services-box > h1 {
+    .services__title {
         width: 80%;
     }
 
-    #services-box > div{
-        display: block;
+    .services__container {
         width: 80%;
     }
 
-    .service {
-        width: 100%;
-    }
-
-    .service > img {
-        float: left;
-        width: 50%;
-    }
-
-    .service::after {
-        content: '';
-        display: block;
-        clear: left;
+    .services__title::before,
+    .services__title::after {
+        content: url("../images/line.png");
+        opacity: 0.6;
     }
 }
 
-/*1 нужно добавить див для обертки заголовка, текста и ссылки в .service
-  2 в каждом втором float right для картинки
-  3 поменять после 70rem стиль ссылки + добавить картинку перед блоком Услуги
-  4 обратить внимание на цвет фона
-  5 выравнивание заголовка Услуги
- */
+@media (min-width: 90rem) {
+    .services__container {
+        width: 60%;
+        max-width: 2000px;
+    }
+
+    .services__item {
+        width: 32%;
+    }
+}
